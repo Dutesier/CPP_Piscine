@@ -8,26 +8,34 @@ YEL	= \033[0;33m
 BLU	= \033[0;34m
 GRN	= \033[0;32m
 
-NAME		=	megaphone
+NAME		=	phonebook
 
-DIR_S		=	./
-SRCS		=	megaphone.cpp \
+DIR_S		:=	srcs
+SRCS		:=	srcs/main.cpp 
 
-DIR_O		=	obj
-OBJS		=	$(SRCS:%.cpp=$(DIR_O)/%.o)
+HEADERS		=	includes
+
+DIR_O		:=	obj
+OBJS		:=	$(SRCS:%.cpp=$(DIR_O)/%.o)
+
+SUB_DIR_O := $(shell find $(DIR_S) -type d)
+SUB_DIR_O := $(SUB_DIR_O:%=$(DIR_O)/%)
 
 CC			=	c++
 CFLAGS		=	-std=c++98 -Wall -Wextra -Werror
 
+INCLUDES	=	-I $(HEADERS)
+
 RM			=	rm -f
 RM_DIR		=	rm -rf
 
-$(DIR_O)/%.o:	$(DIR_S)%.cpp
+$(DIR_O)/%.o:	%.cpp
 				@mkdir -p $(DIR_O)
-				$(CC) $(CFLAGS) -c $< -o $@
+				@mkdir -p $(SUB_DIR_O)
+				$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(NAME):		$(OBJS)
-				$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+				$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJS)
 				printf "$(WHT)[$(GRN)$(NAME) COMPILED$(WHT)]\n"
 
 all:			$(NAME)
