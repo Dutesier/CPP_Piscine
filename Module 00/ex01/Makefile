@@ -11,7 +11,9 @@ GRN	= \033[0;32m
 NAME		=	phonebook
 
 DIR_S		:=	srcs
-SRCS		:=	srcs/main.cpp 
+SRCS		:=	srcs/main.cpp \
+				srcs/Phonebook.cpp \
+				srcs/Contact.cpp
 
 HEADERS		=	includes
 
