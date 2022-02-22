@@ -11,7 +11,7 @@ GRN	= \033[0;32m
 NAME		=	account
 
 DIR_S		:=	srcs
-SRCS		:=	srcs/main.cpp \
+SRCS		:=	srcs/tests.cpp \
 				srcs/Account.cpp \
 
 HEADERS		=	includes
