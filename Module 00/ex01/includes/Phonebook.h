@@ -2,9 +2,8 @@
 #	define PHONEBOOK_H
 
 #	include "Contact.h"
-#	ifndef MAX_SIZE
-#		define MAX_SIZE 3
-#	endif
+const int MAX_SIZE = 8;
+
 class Phonebook {
 public:
 	Phonebook(int phonebookSize); //Constructor

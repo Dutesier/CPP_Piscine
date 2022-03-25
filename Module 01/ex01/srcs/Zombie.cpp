@@ -1,7 +1,20 @@
 #include "Zombie.hpp"
 
+Zombie::Zombie(){
+	name = "jorge";
+}
+
 Zombie::Zombie(std::string my_name) {
 	this->name = my_name;
+}
+
+Zombie::Zombie(const Zombie &zombie){
+	new Zombie(zombie.name);
+}
+
+Zombie & Zombie::operator=(const Zombie &zombie) {
+	name = zombie.name;
+	return (*this);
 }
 
 void Zombie::setName(std::string my_name){
@@ -17,5 +30,5 @@ Zombie::~Zombie() {
 void Zombie::announce(void)
 {
 	std::cout << name
-		<< " BraiiiiiiinnnzzzZ..." << std::endl;
+		<< ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

@@ -10,12 +10,6 @@ int main(void)
 	{
 		horde[i].announce();
 	}
-	/*for (int i = 0; i < n; i++)
-	{
-		delete horde[i];
-	}*/
-
-	delete horde;
-	std::cout << "Ending program\n";
+	delete[] horde;
 	return (0);
 }

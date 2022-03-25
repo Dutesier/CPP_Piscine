@@ -52,23 +52,26 @@ int	Phonebook::ListContacts()
 		rest++;
 	}
 	std::string input;
-	std::cout << "Select an index (0-7):" << std::endl;
-	std::cin >> input;
+	
 	int inputIdx = MAX_SIZE + 1;
 	while (inputIdx > MAX_SIZE - 1 || inputIdx < 0)
 	{
 		std::cout << "Select an index (0-7):" << std::endl;
+		std::cin >> input;
 		try
 		{
 			inputIdx = std::stoi(input.c_str());
 		}
 		catch(std::exception &err)
 		{
+			inputIdx = -1;
 			std::cout << "Something valid pls..." << std::endl;
 			std::cin >> input;
 		}
 	}
-	contacts[std::stoi(input.c_str())].GetFullInfo();
+	
+	inputIdx = (inputIdx + listStart) % MAX_SIZE;
+	contacts[inputIdx].GetFullInfo();
 	return (0);
 }
 

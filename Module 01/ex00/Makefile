@@ -53,4 +53,8 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all clean fclean re			
+debug:			CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+debug:			fclean
+debug:			all
+
+.PHONY:			all clean fclean re	debug	

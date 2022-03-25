@@ -6,11 +6,12 @@
 class Zombie {
 public:
 	Zombie(std::string my_name);
-	virtual ~Zombie();
+	Zombie(const Zombie &zombie);
+	Zombie &operator=(const Zombie &zombie);
+	~Zombie();
 	void announce(void);
 private:
 	std::string name;
-	
 };
 
 Zombie *newZombie(std::string name);

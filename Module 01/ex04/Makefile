@@ -8,14 +8,10 @@ YEL	= \033[0;33m
 BLU	= \033[0;34m
 GRN	= \033[0;32m
 
-NAME		=	moar_brainz
+NAME		=	replace
 
 DIR_S		:=	srcs
 SRCS		:=	srcs/main.cpp \
-				srcs/Zombie.cpp \
-				srcs/zombieHorde.cpp \
-				srcs/randomChump.cpp \
-				srcs/newZombie.cpp \
 
 HEADERS		=	includes
 

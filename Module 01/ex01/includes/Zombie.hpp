@@ -5,10 +5,12 @@
 
 class Zombie {
 public:
+	Zombie();
 	Zombie(std::string my_name);
-	Zombie(void);
+	Zombie(const Zombie &zombie);
+	Zombie &operator=(const Zombie &zombie);
+	~Zombie();
 	void setName(std::string my_name);
-	virtual ~Zombie();
 	void announce(void);
 private:
 	std::string name;
