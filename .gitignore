@@ -30,5 +30,6 @@
 *.exe
 *.out
 *.app
-Module 00/.vscode/settings.json
-Module 01/.vscode/settings.json
+
+# Specific Folders
+.vscode/*
