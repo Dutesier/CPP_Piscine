@@ -71,7 +71,8 @@ int	Phonebook::ListContacts()
 	}
 	
 	inputIdx = (inputIdx + listStart) % MAX_SIZE;
-	contacts[inputIdx].GetFullInfo();
+	if (inputIdx < numOfContacts)
+		contacts[inputIdx].GetFullInfo();
 	return (0);
 }
 
