@@ -120,9 +120,19 @@ Fixed	Fixed::operator/(const Fixed& other) const {
 	Fixed	ret;
 	int		result;
 
-	result = ((signed long long)(value) << fractional_bits / other.value);
+	result = (((signed long long)(value) << fractional_bits) / other.value);
 	ret.setRawBits(result);
 	return (ret);
+}
+
+Fixed& Fixed::operator++() { // Prefix
+	++value;
+	return (*this);
+}
+
+Fixed& Fixed::operator--() {
+	--value;
+	return (*this);
 }
 
 Fixed Fixed::operator++(int) { // Here we need to return the value of the object BEFORE this was called
@@ -132,21 +142,11 @@ Fixed Fixed::operator++(int) { // Here we need to return the value of the object
 	return (temp);
 }
 
-Fixed& Fixed::operator++() { // Prefix
-	++value;
-	return (*this);
-}
-
 Fixed Fixed::operator--(int) {
 	Fixed temp;
 
 	temp.value = value--;
 	return (temp);
-}
-
-Fixed& Fixed::operator--() {
-	--value;
-	return (*this);
 }
 
 Fixed& Fixed::min(Fixed& a, Fixed& b) {
