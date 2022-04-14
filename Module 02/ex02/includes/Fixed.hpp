@@ -12,16 +12,17 @@ public:
 	Fixed(const Fixed &original);
 	Fixed &operator=(const Fixed &original);
 	~Fixed();
-	int getRawBits( void ) const; // Meaning it is not allowed to modify the object on which it is called
-	void setRawBits( int const raw );
-	float toFloat( void ) const;
-	int toInt( void ) const;
-	bool operator>(const Fixed& other);
-	bool operator<(const Fixed& other);
-	bool operator>=(const Fixed& other);
-	bool operator<=(const Fixed& other);
-	bool operator==(const Fixed& other);
-	bool operator!=(const Fixed& other);
+	int		getRawBits(void) const; // Meaning it is not allowed to modify the object on which it is called
+	void	setRawBits(int const raw);
+	float	toFloat(void) const;
+	int		toInt(void) const;
+	bool	operator>(const Fixed& other) const;
+	bool	operator<(const Fixed& other) const;
+	bool	operator>=(const Fixed& other) const;
+	bool	operator<=(const Fixed& other) const;
+	bool	operator==(const Fixed& other) const;
+	bool	operator!=(const Fixed& other) const;
+	Fixed	operator+(const Fixed& other) const;
 	
 private:
 	int value;

@@ -69,6 +69,36 @@ int Fixed::toInt( void ) const {
 	return (value >> fractional_bits);
 }
 
+bool Fixed::operator>(const Fixed& other) const {
+	return (value > other.value);
+}
+
+bool Fixed::operator<(const Fixed& other) const {
+	return (value < other.value);
+}
+
+bool Fixed::operator>=(const Fixed& other) const {
+	return (value >= other.value);
+}
+
+bool Fixed::operator<=(const Fixed& other) const {
+	return (value <= other.value);
+}
+
+bool Fixed::operator==(const Fixed& other) const {
+	return (value == other.value);
+}
+
+bool Fixed::operator!=(const Fixed& other) const {
+	return (value != other.value);
+}
+
+Fixed	Fixed::operator+(const Fixed& other) const {
+	Fixed ret;
+
+	ret.setRawBits(value + other.value);
+	return (ret);
+}
 
 std::ostream& operator<<(std::ostream& s, const Fixed& me) {
 	s << me.toFloat();
