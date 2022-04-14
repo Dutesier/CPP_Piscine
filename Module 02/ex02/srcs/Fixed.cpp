@@ -100,6 +100,31 @@ Fixed	Fixed::operator+(const Fixed& other) const {
 	return (ret);
 }
 
+Fixed	Fixed::operator-(const Fixed& other) const {
+	Fixed ret;
+
+	ret.setRawBits(value - other.value);
+	return (ret);
+}
+
+Fixed	Fixed::operator*(const Fixed& other) const {
+	Fixed	ret;
+	int		result;
+
+	result = ((signed long long) value * (signed long long)other.value) >> fractional_bits;
+	ret.setRawBits(result);
+	return (ret);
+}
+
+Fixed	Fixed::operator/(const Fixed& other) const {
+	Fixed	ret;
+	int		result;
+
+	result = ((signed long long)(value) << fractional_bits / other.value);
+	ret.setRawBits(result);
+	return (ret);
+}
+
 std::ostream& operator<<(std::ostream& s, const Fixed& me) {
 	s << me.toFloat();
 	return s;

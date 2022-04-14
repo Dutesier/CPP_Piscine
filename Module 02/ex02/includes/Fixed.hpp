@@ -23,6 +23,9 @@ public:
 	bool	operator==(const Fixed& other) const;
 	bool	operator!=(const Fixed& other) const;
 	Fixed	operator+(const Fixed& other) const;
+	Fixed	operator-(const Fixed& other) const;
+	Fixed	operator*(const Fixed& other) const;
+	Fixed	operator/(const Fixed& other) const;
 	
 private:
 	int value;

@@ -14,6 +14,7 @@ int main( void ) {
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "Starting comparison tests" << std::endl; 
 	std::cout << "a > b: " << (a > b) << std::endl; 
 	std::cout << "b > a: " << (b > a) << std::endl; 
 	std::cout << "a < b: " << (a < b) << std::endl; 
@@ -27,7 +28,10 @@ int main( void ) {
 	std::cout << "a == e: " << (a == e) << std::endl; 
 	std::cout << "a == d: " << (a == d) << std::endl; 
 	std::cout << "a != e: " << (a != e) << std::endl; 
-	std::cout << "a != d: " << (a != d) << std::endl; 
-	std::cout << "a + b: " << (a + b) << std::endl; 
+	std::cout << "a != d: " << (a != d) << std::endl;
+	std::cout << "Starting arithmetic tests" << std::endl; 
+	std::cout << "a + b: " << (a + b) << std::endl;
+	std::cout << "0.5 * 4 = " << (Fixed(0.5f) * Fixed(4)) << std::endl; 
+	std::cout << "0.1 * 0.2 = " << (Fixed(0.1f) * Fixed(0.2f)) << std::endl; 
 	return 0;
 }
