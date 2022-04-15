@@ -15,11 +15,13 @@ Point::Point(const Point& original)
         , y(original.y)
 {}
 
-Point& Point::operator=(const Point& original) {
+Point Point::operator=(const Point& original) {
     Point temp (original);
 
     return (temp);
 }
+
+Point::~Point() {}
 
 const Fixed& Point::getX() const{
     return (x);

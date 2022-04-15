@@ -8,12 +8,13 @@ YEL	= \033[0;33m
 BLU	= \033[0;34m
 GRN	= \033[0;32m
 
-NAME		=	fixed
+NAME		=	bsp
 
 DIR_S		:=	srcs
 SRCS		:=	srcs/main.cpp \
 				srcs/Fixed.cpp \
 				srcs/Point.cpp \
+				srcs/bsp.cpp \
 
 HEADERS		=	includes
 
