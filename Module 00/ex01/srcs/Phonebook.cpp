@@ -56,7 +56,7 @@ int	Phonebook::ListContacts()
 	int inputIdx = MAX_SIZE + 1;
 	while (inputIdx > MAX_SIZE - 1 || inputIdx < 0)
 	{
-		std::cout << "Select an index (0-7):" << std::endl;
+		std::cout << "Select an index (0-" << (numOfContacts > 0 ? numOfContacts - 1 : 0)  << "): " << std::endl;
 		std::cin >> input;
 		try
 		{
@@ -66,7 +66,6 @@ int	Phonebook::ListContacts()
 		{
 			inputIdx = -1;
 			std::cout << "Something valid pls..." << std::endl;
-			std::cin >> input;
 		}
 	}
 	
