@@ -13,12 +13,14 @@ public:
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 	void	printStats();
+	void	setName(std::string new_name);
 
-private:
+protected:
 	std::string		name;
 	unsigned int	hit_points;
 	unsigned int	energy_points;
 	int				attack_damage;
+	std::string		species;
 
 };
 
