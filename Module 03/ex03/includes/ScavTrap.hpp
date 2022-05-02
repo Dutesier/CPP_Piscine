@@ -5,6 +5,7 @@
 
 class ScavTrap: virtual public ClapTrap {
 public:
+	ScavTrap();
 	ScavTrap(std::string new_name);
 	ScavTrap(const ScavTrap& orig);
 	ScavTrap &operator=(const ScavTrap& orig);
