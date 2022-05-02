@@ -44,7 +44,7 @@ DiamondTrap & DiamondTrap::operator=(const DiamondTrap& orig) {
 
 DiamondTrap::~DiamondTrap() {
     std::cout << "\u001b[31m";
-    std::cout << "[DiamondTrap Destructor] " << name << " has been destroyed" << std::endl;
+    std::cout << "[DiamondmakTrap Destructor] " << name << " has been destroyed" << std::endl;
 
 }
 
