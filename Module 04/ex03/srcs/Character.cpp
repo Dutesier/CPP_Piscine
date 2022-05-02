@@ -8,6 +8,9 @@ Character::Character(std::string my_name):name(my_name){
 
 Character::Character(const Character& orig):name(orig.getName()){
     for (int i = 0; i < 4; i++) {
+        inventory[i] = NULL;
+    }
+    for (int i = 0; i < 4; i++) {
         if (orig.inventory[i] != 0)
             inventory[i] = orig.inventory[i]->clone();
     }
@@ -15,6 +18,14 @@ Character::Character(const Character& orig):name(orig.getName()){
 
 Character & Character::operator=(const Character& orig) {
     name = orig.getName();
+    for (int i = 0; i < 4; i++) {
+        if (inventory[i] != 0)
+            delete inventory[i];
+    }
+    for (int i = 0; i < 4; i++) {
+        if (orig.inventory[i] != 0)
+            inventory[i] = orig.inventory[i]->clone();
+    }
     return (*this);
 }
 

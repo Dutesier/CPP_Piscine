@@ -14,6 +14,7 @@ DIR_S		:=	srcs
 SRCS		:=	srcs/main.cpp \
 				srcs/AMateria.cpp \
 				srcs/Ice.cpp \
+				srcs/Cure.cpp \
 				srcs/Character.cpp\
 				srcs/AMateriaArray.cpp \
 
