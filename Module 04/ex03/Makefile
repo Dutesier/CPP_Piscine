@@ -13,6 +13,7 @@ NAME		=	interface
 DIR_S		:=	srcs
 SRCS		:=	srcs/main.cpp \
 				srcs/AMateria.cpp \
+				srcs/MateriaSource.cpp \
 				srcs/Ice.cpp \
 				srcs/Cure.cpp \
 				srcs/Character.cpp\
