@@ -23,12 +23,12 @@ int main(void) {
     } catch (std::exception& ex) {
         std::cout << ex.what() << std::endl;
     }
-
+    std::cout << b << fone << ftwo << std::endl;
     std::cout << "\u001b[42;1m" << "Testing Signing" << "\u001b[0m" << std::endl;
     b.signForm(fone);
     b.signForm(ftwo);
     std::cout << "\u001b[42;1m" << "---> Finished Testing <---" << "\u001b[0m" << std::endl;
-
+    std::cout << fone << ftwo << std::endl;
 
     return (0);
 }
