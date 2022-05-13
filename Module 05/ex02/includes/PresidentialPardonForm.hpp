@@ -2,7 +2,6 @@
 # define PRESIDENTIALPARDONFORM_HPP
 
 # include "Form.hpp"
-# include <fstream>
 
 class PresidentialPardonForm: public Form {
 public:
@@ -16,8 +15,6 @@ public:
 	void		execute(Bureaucrat const & executor) const throw(std::exception);
 private:
 	std::string	target;
-	// const unsigned int	grade_required_signing;
-	// const unsigned int	grade_required_executing;
 
 };
 

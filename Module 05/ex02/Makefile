@@ -15,8 +15,8 @@ SRCS		:=	srcs/main.cpp \
 				srcs/Bureaucrat.cpp \
 				srcs/Form.cpp \
 				srcs/PresidentialPardonForm.cpp \
-				# srcs/RobotomyRequestForm.cpp \
-				# srcs/ShrubberyCreationForm.cpp \
+				srcs/RobotomyRequestForm.cpp \
+				srcs/ShrubberyCreationForm.cpp \
 
 
 HEADERS		:= includes
