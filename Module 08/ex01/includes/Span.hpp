@@ -5,6 +5,7 @@
 # include <iostream>
 # include <algorithm>
 # include <numeric>
+# include <limits.h>
 
 class Span {
 public:

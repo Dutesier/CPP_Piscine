@@ -39,9 +39,17 @@ int     Span::shortestSpan(void) {
     std::vector<int> diff = data;
     std::sort(data.begin(), data.end());
     std::adjacent_difference(data.begin(), data.end(), diff.begin());
+    *diff.begin() = INT_MAX;
+    // std::cout << "\nDEBUGGING" << std::endl;
+    // std::vector<int>::iterator j = data.begin();
     for (std::vector<int>::iterator i = diff.begin(); i < diff.end(); i++) {
-        std::cout << *i << " " << std::endl;
+        if (*i < 0) {
+            *i = *i * -1;
+        }
+        // std::cout << "Data: " << *j << std::endl << " Diff: " << *i << " " << std::endl;
+        // j++;
     }
+    // std::cout << "\n Finished DEBUGGING" << std::endl;
     return *(std::min_element(diff.begin(), diff.end()));
 }
 
@@ -49,11 +57,5 @@ int     Span::longestSpan(void) {
     if (data.size() <= 1)
         throw std::exception();
     
-    std::vector<int> diff;
-    diff.reserve(data.size());
-    std::sort(data.begin(), data.end());
-    std::adjacent_difference(data.begin(), data.end(), diff.begin());
-
-
-    return *(std::max_element(diff.begin(), diff.end()));
+    return (*std::max_element(data.begin(), data.end()) - *std::min_element(data.begin(), data.end()));
 }
