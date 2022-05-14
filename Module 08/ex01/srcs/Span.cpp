@@ -1,0 +1,59 @@
+#include "Span.hpp"
+
+Span::Span(unsigned int n):
+    size(n){
+    try {
+        data.reserve(n);
+    } catch (std::exception& ex) {
+        std::cerr << "Could not allocate enough memory" << std::endl;
+    }
+}
+
+Span::Span(const Span& orig):    
+    size(orig.size),
+    data(orig.data) {
+}
+
+Span & Span::operator=(const Span& orig) {
+    if (this != &orig) {
+        size = orig.size;
+        data = orig.data;
+    }
+    return (*this);
+}
+
+Span::~Span() {
+}
+
+void    Span::addNumber(int num) {
+    if (data.size() >= size) {
+        throw std::exception();
+    }
+    data.push_back(num);
+}
+
+int     Span::shortestSpan(void) {
+    if (data.size() <= 1)
+        throw std::exception();
+    
+    std::vector<int> diff = data;
+    std::sort(data.begin(), data.end());
+    std::adjacent_difference(data.begin(), data.end(), diff.begin());
+    for (std::vector<int>::iterator i = diff.begin(); i < diff.end(); i++) {
+        std::cout << *i << " " << std::endl;
+    }
+    return *(std::min_element(diff.begin(), diff.end()));
+}
+
+int     Span::longestSpan(void) {
+    if (data.size() <= 1)
+        throw std::exception();
+    
+    std::vector<int> diff;
+    diff.reserve(data.size());
+    std::sort(data.begin(), data.end());
+    std::adjacent_difference(data.begin(), data.end(), diff.begin());
+
+
+    return *(std::max_element(diff.begin(), diff.end()));
+}
