@@ -14,7 +14,10 @@ public:
 	Span &operator=(const Span& orig);
 	virtual ~Span();
 
+	unsigned int getDataSize();
+
 	void addNumber(int num);
+	void addMultipleNumbers(std::vector<int>::iterator b, std::vector<int>::iterator e);
 	int shortestSpan(void);
 	int longestSpan(void);
 private:

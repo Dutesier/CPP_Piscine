@@ -59,3 +59,17 @@ int     Span::longestSpan(void) {
     
     return (*std::max_element(data.begin(), data.end()) - *std::min_element(data.begin(), data.end()));
 }
+
+void Span::addMultipleNumbers(std::vector<int>::iterator b, std::vector<int>::iterator e) {
+    try {
+        for (std::vector<int>::iterator i = b; i < e; i++){
+            addNumber(rand());
+        }
+    } catch (std::exception &ex) {
+        std::cerr << "Reached span max size, stopping now" << std::endl;
+    }
+}
+
+unsigned int Span::getDataSize(void) {
+    return (data.size());
+}
