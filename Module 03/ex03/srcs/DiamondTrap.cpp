@@ -8,8 +8,9 @@ DiamondTrap::DiamondTrap(): ScavTrap("anon"), FragTrap("anon") {
     std::string temp = "anon";
     ClapTrap::name = temp + "_clap_name";
     name = "anon";
-    std::cout << "\u001b[31m";
+    std::cout << GREEN;
     std::cout << "[DiamondTrap Default Constructor] " << "A wild " << name << " appeared!" << std::endl;
+    std::cout << RESET;
 }
 
 DiamondTrap::DiamondTrap(std::string my_name):ScavTrap(my_name), FragTrap(my_name) {
@@ -19,8 +20,9 @@ DiamondTrap::DiamondTrap(std::string my_name):ScavTrap(my_name), FragTrap(my_nam
     species = "DiamondTrap";
     ClapTrap::name = my_name + "_clap_name";
     name = my_name;
-    std::cout << "\u001b[31m";
+    std::cout << GREEN;
     std::cout << "[DiamondTrap Default Constructor] " << "A wild " << name << " appeared!" << std::endl;
+    std::cout << RESET;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& orig): ClapTrap(orig.name), ScavTrap(orig.name), FragTrap(orig.name) {
@@ -43,14 +45,15 @@ DiamondTrap & DiamondTrap::operator=(const DiamondTrap& orig) {
 }
 
 DiamondTrap::~DiamondTrap() {
-    std::cout << "\u001b[31m";
+    std::cout << GREEN;
     std::cout << "[DiamondmakTrap Destructor] " << name << " has been destroyed" << std::endl;
-
+    std::cout << RESET;
 }
 
 void    DiamondTrap::whoAmI(void) {
-    std::cout << "\u001b[31m";
+    std::cout << GREEN;
     std::cout << "My name is " << name << " but my parents call me " << ClapTrap::name << std::endl;
+    std::cout << RESET;
 }
 
 void    DiamondTrap::attack(const std::string& target) {
