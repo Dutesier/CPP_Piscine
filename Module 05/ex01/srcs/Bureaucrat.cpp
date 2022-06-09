@@ -79,10 +79,10 @@ Bureaucrat& Bureaucrat::operator--(void) throw(std::exception) {
 
 // Exceptions
 const char* Bureaucrat::GradeTooHighException::what(void) const throw () {
-    return ("\u001b[31mException: Grade too high\u001b[37m");
+    return ("\033[31mException: Grade too high\033[37m");
 }
 const char* Bureaucrat::GradeTooLowException::what(void) const throw () {
-    return ("\u001b[31mException: Grade too low\u001b[37m");
+    return ("\033[31mException: Grade too low\033[37m");
 }
 
 void        Bureaucrat::signForm(Form& f) {

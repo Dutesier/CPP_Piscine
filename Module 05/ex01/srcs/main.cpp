@@ -24,10 +24,10 @@ int main(void) {
         std::cout << ex.what() << std::endl;
     }
     std::cout << b << fone << ftwo << std::endl;
-    std::cout << "\u001b[42;1m" << "Testing Signing" << "\u001b[0m" << std::endl;
+    std::cout << "\033[42;1m" << "Testing Signing" << "\033[0m" << std::endl;
     b.signForm(fone);
     b.signForm(ftwo);
-    std::cout << "\u001b[42;1m" << "---> Finished Testing <---" << "\u001b[0m" << std::endl;
+    std::cout << "\033[42;1m" << "---> Finished Testing <---" << "\033[0m" << std::endl;
     std::cout << fone << ftwo << std::endl;
 
     return (0);

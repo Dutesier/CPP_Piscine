@@ -35,7 +35,7 @@ int TestCatWithToughts(void) {
     for (int i = 0; i < BRAIN_SIZE; i++) {
         delete animals[i];
     }
-    std::cout << "\u001b[42;1m" <<"***** Finished Cat with Testing *****" << "\u001b[0m" << std::endl;
+    std::cout << "\033[42;1m" <<"***** Finished Cat with Testing *****" << "\033[0m" << std::endl;
     return (0);
 }
 
@@ -58,34 +58,34 @@ int TestAnimalsWithBrains(void){
 
 int main(void) {
     if (TestShallowVsDeepCopies()) {
-        std::cout << "\u001b[41;1m" <<"***** Failed Copy Testing *****" << "\u001b[0m" << std::endl;
+        std::cout << "\033[41;1m" <<"***** Failed Copy Testing *****" << "\033[0m" << std::endl;
     } else {
-        std::cout << "\u001b[42;1m" <<"***** Passed Copy Testing *****" << "\u001b[0m" << std::endl;
+        std::cout << "\033[42;1m" <<"***** Passed Copy Testing *****" << "\033[0m" << std::endl;
     }
 
     if (TestSubject()) {
-        std::cout << "\u001b[41;1m" <<"***** Failed Subject Testing *****" << "\u001b[0m" << std::endl;
+        std::cout << "\033[41;1m" <<"***** Failed Subject Testing *****" << "\033[0m" << std::endl;
     } else {
-        std::cout << "\u001b[42;1m" <<"***** Passed Subject Testing *****" << "\u001b[0m" << std::endl;
+        std::cout << "\033[42;1m" <<"***** Passed Subject Testing *****" << "\033[0m" << std::endl;
     }
 
     if (TestCatWithToughts()) {
-        std::cout << "\u001b[41;1m" <<"***** Failed Cat Sharing Thoughts Testing *****" << "\u001b[0m" << std::endl;
+        std::cout << "\033[41;1m" <<"***** Failed Cat Sharing Thoughts Testing *****" << "\033[0m" << std::endl;
     } else {
-        std::cout << "\u001b[42;1m" <<"***** Passed Cat Sharing Thoughts Testing *****" << "\u001b[0m" << std::endl;
+        std::cout << "\033[42;1m" <<"***** Passed Cat Sharing Thoughts Testing *****" << "\033[0m" << std::endl;
     }
 
     if (TestAnimalsWithBrains()) {
-        std::cout << "\u001b[41;1m" <<"***** Failed Cat & Dogs Testing *****" << "\u001b[0m" << std::endl;
+        std::cout << "\033[41;1m" <<"***** Failed Cat & Dogs Testing *****" << "\033[0m" << std::endl;
     } else {
-        std::cout << "\u001b[42;1m" <<"***** Passed Cat & Dogs Testing *****" << "\u001b[0m" << std::endl;
+        std::cout << "\033[42;1m" <<"***** Passed Cat & Dogs Testing *****" << "\033[0m" << std::endl;
     }
 
 
 
 
 
-    std::cout << "\u001b[42;1m" <<"***** Finished Testing *****" << "\u001b[0m" << std::endl;
+    std::cout << "\033[42;1m" <<"***** Finished Testing *****" << "\033[0m" << std::endl;
 
 
 

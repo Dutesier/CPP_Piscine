@@ -64,10 +64,10 @@ void				Form::beSigned(Bureaucrat& b) throw(std::exception){
 
 // Exceptions
 const char* Form::GradeTooHighException::what(void) const throw () {
-    return ("\u001b[31mGrade too high\u001b[37m");
+    return ("\033[31mGrade too high\033[37m");
 }
 const char* Form::GradeTooLowException::what(void) const throw () {
-    return ("\u001b[31mGrade too low\u001b[37m");
+    return ("\033[31mGrade too low\033[37m");
 }
 
 bool        Form::is_valid(unsigned int grade) throw(std::exception){

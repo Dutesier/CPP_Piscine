@@ -79,8 +79,8 @@ Bureaucrat& Bureaucrat::operator--(void) throw(std::exception) {
 
 // Exceptions
 const char* Bureaucrat::GradeTooHighException::what(void) const throw () {
-    return ("\u001b[31mException: Grade can't be higher than 1\u001b[37m");
+    return ("\033[31mException: Grade can't be higher than 1\033[37m");
 }
 const char* Bureaucrat::GradeTooLowException::what(void) const throw () {
-    return ("\u001b[31mException: Grade can't be lower than 150\u001b[37m");
+    return ("\033[31mException: Grade can't be lower than 150\033[37m");
 }

@@ -1,12 +1,12 @@
 #include "Brain.hpp"
 
 Brain::Brain(){
-    std::cout << "\u001b[38;5;42m[Brain Default Constructor]\u001b[37m" << std::endl;
+    std::cout << "\033[38;5;42m[Brain Default Constructor]\033[37m" << std::endl;
     populateIdeas();
 }
 
 Brain::Brain(const Brain& orig) {
-    std::cout << "\u001b[38;5;42m[Brain Copy Constructor]\u001b[37m" << std::endl;
+    std::cout << "\033[38;5;42m[Brain Copy Constructor]\033[37m" << std::endl;
     if (orig.ideas != NULL) {
         for (int i = 0; i < BRAIN_SIZE; i++) {
             ideas[i] = orig.ideas[i];
@@ -15,7 +15,7 @@ Brain::Brain(const Brain& orig) {
 }
 
 Brain & Brain::operator=(const Brain& orig) {
-    std::cout << "\u001b[38;5;42m[Brain Assignment Operator]\u001b[37m" << std::endl;
+    std::cout << "\033[38;5;42m[Brain Assignment Operator]\033[37m" << std::endl;
     if (orig.ideas != NULL) {
         for (int i = 0; i < BRAIN_SIZE; i++) {
             ideas[i] = orig.ideas[i];
@@ -25,7 +25,7 @@ Brain & Brain::operator=(const Brain& orig) {
 }
 
 Brain::~Brain() {
-    std::cout << "\u001b[38;5;42m[Brain Destructor]\u001b[37m" << std::endl;
+    std::cout << "\033[38;5;42m[Brain Destructor]\033[37m" << std::endl;
 }
 
 void    Brain::populateIdeas(void) {
