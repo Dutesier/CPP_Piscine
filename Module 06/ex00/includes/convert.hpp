@@ -1,7 +1,7 @@
 #ifndef CONVERT_HPP
 # define CONVERT_HPP
 
-# define LOG(x) std::cout << std::setprecision(4) << x << std::endl
+# define LOG(x) std::cout << std::fixed << std::setprecision(2) << x << std::endl
 
 enum {
     INVALID,
@@ -13,7 +13,7 @@ enum {
     NINFF,
     INF,
     NINF,
-    NAN,
+    NANUM,
 };
 
 unsigned int get_type(std::string literal);

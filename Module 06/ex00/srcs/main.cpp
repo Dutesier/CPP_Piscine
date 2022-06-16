@@ -5,6 +5,9 @@
 #include <limits.h>
 #include "convert.hpp"
 
+// void test();
+// int convert(std::string literal);
+
 int main(int argc, char* argv[]) {
     unsigned int type;
     std::string literal;
@@ -13,6 +16,7 @@ int main(int argc, char* argv[]) {
         LOG("USAGE: ./convert [literal]");
         return (1);
     }
+    // test();
     literal = static_cast<std::string>(argv[1]);
     type = get_type(literal);
     if (type == INVALID) {
@@ -28,7 +32,6 @@ int main(int argc, char* argv[]) {
         return (0);
     }
     print_special(type);
-
     return (0);
 }
 
@@ -81,14 +84,14 @@ unsigned int get_type(std::string literal) {
     if (literal == "nanf")
         return NANF;
     if (literal == "nan")
-        return NAN;
-    if ((literal == "inff") || (literal == "inff+"))
+        return NANUM;
+    if ((literal == "inff") || (literal == "+inff"))
         return INFF;
-    if ((literal == "inf") || (literal == "inf+"))
+    if ((literal == "inf") || (literal == "+inf"))
         return INF;
-    if (literal == "inff-")
+    if (literal == "-inff")
         return NINFF;
-    if (literal == "inf-")
+    if (literal == "-inf")
         return NINF;
     if (len == 1 && !is_digit(literal[0]))
         return XCHAR;
@@ -98,10 +101,10 @@ unsigned int get_type(std::string literal) {
 
 void print_special(unsigned int type) {
     LOG("char: impossible");
-    LOG("char: impossible");
+    LOG("int: impossible");
     switch (type) {
         case NANF:
-        case NAN:
+        case NANUM:
             LOG("float: nanf");
             LOG("double: nan");
             break ;
@@ -154,7 +157,6 @@ void print_double(double d) {
 }
 
 void print_float(float f) {
-    LOG("Printing float");
     if (f > std::numeric_limits<char>::max() || f < std::numeric_limits<char>::min()) {
         LOG("char: impossible");
     } else if (!std::isprint(static_cast<char>(f))) {
@@ -176,3 +178,76 @@ bool    is_digit(char c) {
         return (true);
     return (false);
 }
+
+// void test() {
+
+//     convert("42");
+//     std::cout << std::endl;
+//     convert("42f");
+//     std::cout << std::endl;
+//     convert("42.02f");
+//     std::cout << std::endl;
+//     convert("42.0234f");
+//     std::cout << std::endl;
+//     convert("42.");
+//     std::cout << std::endl;
+//     convert("42.02");
+//     std::cout << std::endl;
+//     convert("42.1234567890123");
+//     std::cout << std::endl;
+//     convert("-42");
+//     std::cout << std::endl;
+//     convert("-42f");
+//     std::cout << std::endl;
+//     convert("-42.02f");
+//     std::cout << std::endl;
+//     convert("-42.0234f");
+//     std::cout << std::endl;
+//     convert("-42.");
+//     std::cout << std::endl;
+//     convert("-42.02");
+//     std::cout << std::endl;
+//     convert("-42.1234567890123");
+//     std::cout << std::endl;
+//     convert("a");
+//     std::cout << std::endl;
+//     convert("nan");
+//     std::cout << std::endl;
+//     convert("nanf");
+//     std::cout << std::endl;
+//     convert("inf");
+//     std::cout << std::endl;
+//     convert("-inf");
+//     std::cout << std::endl;
+//     convert("+inff");
+//     std::cout << std::endl;
+//     convert("-inff");
+//     std::cout << std::endl;
+//     std::cout << "Exemplifying the issue with using floating point numbers" << std::endl;
+//     convert("10000000000000");
+//     std::cout << std::endl;
+//     convert("-100000000000000");
+//     std::cout << std::endl;
+// }
+
+// int convert(std::string literal) {
+//     std::cout << "Testing: " << literal << std::endl;
+//     unsigned int type;
+
+//     type = get_type(literal);
+//     if (type == INVALID) {
+//         LOG("Error: Invalid literal");
+//         return (1);
+//     }
+//     if (type == XDOUBLE) {
+//         theHackerWay(literal);
+//         return (0);
+//     }
+//     if (type == XCHAR) {
+//         print_char(literal[0]);
+//         return (0);
+//     }
+//     print_special(type);
+
+//     return (0);
+// }
