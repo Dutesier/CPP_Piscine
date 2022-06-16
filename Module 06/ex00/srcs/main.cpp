@@ -128,8 +128,8 @@ void print_char(char c) {
     else
         LOG("char: " << c);
     LOG("int: " << static_cast<int>(c));
-    LOG("float: " << static_cast<float>(c) << ".0f" );
-    LOG("double: " << static_cast<double>(c) << ".0");
+    LOG("float: " << static_cast<float>(c) << "f" );
+    LOG("double: " << static_cast<double>(c));
 }
 
 void print_double(double d) {
